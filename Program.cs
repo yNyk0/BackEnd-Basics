@@ -175,14 +175,55 @@ static void Excercise6()
 
 static void Excercise7()
 {
-    
+    // 7)Calcular a quantidade de dinheiro gasta por um fumante. 
+    // Dados: o número de anos que ele fuma, o nº de cigarros fumados por dia e o preço de uma carteira.
+
+    const int cigaretteAmountInWallet = 20;
+
+    Console.WriteLine("Por quantos anos você fuma?");
+    var years = int.Parse(Console.ReadLine());
+
+    Console.WriteLine("Quantos cigarros você fuma por dia?");
+    var cigaretteAmount = int.Parse(Console.ReadLine());
+
+    Console.WriteLine("Qual o preço da carteira de cigarros?");
+    var price = double.Parse(Console.ReadLine());
+
+    var yearsSmoking = years * 365;
+    var cigarettesSmokedPerYear = yearsSmoking * cigaretteAmount;
+    var total = cigarettesSmokedPerYear / cigaretteAmountInWallet;
+
+    Console.WriteLine($"Você gastou {total} reais em cigarro.");
+}
+
+static void Excercise8()
+{
+    // (╯°□°）╯︵ ┻━┻
+    // Ler dois números inteiros, X e Y, e apresentar mensagem informando se o X é múltiplo de Y.
+    // if (firstNumber % secondNumber == 0) Console.WriteLine($"{firstNumber} é múltiplo de {secondNumber}
+    // else Console.WriteLine($"{firstNumber} não é múltiplo de {secondNumber}");
+
+    Console.WriteLine("Digite o 1º número:");
+    var firstNumber = double.Parse(Console.ReadLine());
+
+    Console.WriteLine("Digite o 2º número:");
+    var secondNumber = double.Parse(Console.ReadLine());
+
+    var isMultiple = (firstNumber % secondNumber == 0)
+        ? "é"
+        : "não é";
+        
+    Console.WriteLine($"{firstNumber} {isMultiple} múltiplo de {secondNumber}");
+
+
 }
 
 static void Excercise9()
 {
-    //9)Fazer um algoritmo para ler 03 números reais do teclado e verificar se o 
-    //primeiro é maior que a soma dos outros dois.
-    
+    // 9)Fazer um algoritmo para ler 03 números reais do teclado e verificar se o 
+    // primeiro é maior que a soma dos outros dois.
+    // (╯°□°）╯︵ ┻━┻
+
     // if (firstNumber > (secondNumber + thirdNumber))
     // {
     //     Console.WriteLine($"{firstNumber} é maior que a soma de {secondNumber} e {thirdNumber}");
@@ -205,4 +246,28 @@ static void Excercise9()
     Console.WriteLine($"{firstNumber} é {isBigger} que a soma de {secondNumber} com {thirdNumber}");
 }
 
-Excercise6();
+static void Excercise10()
+{
+    // 10)Ler 02 números reais do teclado (A e B), verificar e imprimir qual 
+    // deles é maior, ou a mensagem "A = B" caso sejam iguais.
+
+    Console.WriteLine("Digite o 1º número:");
+    var firstNumber = double.Parse(Console.ReadLine());
+
+    Console.WriteLine("Digite o 2º número:");
+    var secondNumber = double.Parse(Console.ReadLine());
+
+    var isBigger = firstNumber > secondNumber
+        ? "maior"
+        : "menor";
+
+        Console.WriteLine($"{firstNumber} é {isBigger} que {secondNumber}");
+
+    if (firstNumber == secondNumber)
+    {
+        Console.WriteLine($"{firstNumber} = {secondNumber}");
+    }
+
+}
+
+Excercise10();
