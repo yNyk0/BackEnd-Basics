@@ -1,5 +1,3 @@
-# Projeto Entra21
-
 ### Escrevendo e lendo do console
     // Escrever
     Console.WriteLine("Qual é a sua idade?");

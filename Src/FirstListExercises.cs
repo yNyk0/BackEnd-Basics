@@ -6,9 +6,35 @@ namespace ExercisesLists.FirstLists
     {
         protected Dictionary<string, Action> FirstExerciseList => GetExercises();
 
-        private void FirstExercise()
+        private void FirstExerciseA()
         {
-            Console.WriteLine("Hello World!");
+            // a)Os números de 1 a 10 de forma crescente
+
+            for (int i = 0; i < 11; i++)
+            {
+                Console.WriteLine($"{i}");
+            }
+        }
+
+        private void FirstExerciseB()
+        {
+            // Os números de 1 a 10 de forma decrescente
+
+            for (int i = 10; i > 0; i--)
+            {
+                Console.WriteLine($"{i}");
+            }
+        }
+
+        private void FirstExerciseC()
+        {
+            // Os números de 1 a 10 de forma crescente, mas apenas aqueles
+            // que forem par.
+
+            for (int i = 0; i < 11; i+=2)
+            {
+                Console.WriteLine($"{i}");
+            }
         }
 
         private void SecondExercise()
@@ -21,7 +47,7 @@ namespace ExercisesLists.FirstLists
                 sum += start;
             }
 
-            System.Console.WriteLine($"A soma dos números de 1 a 100 é: {sum}");
+            Console.WriteLine($"A soma dos números de 1 a 100 é: {sum}");
         }
 
         private void ThirdExercise()
@@ -233,49 +259,192 @@ namespace ExercisesLists.FirstLists
 
         private void EleventhExercise()
         {
-            Console.WriteLine("Hello World!");
+            // Ler 02 números inteiros do teclado. Se o segundo for diferente de 
+            // zero, calcular e imprimir o quociente do primeiro pelo segundo. 
+            // Caso contrário, imprimir a mensagem: "DIVISÃO POR ZERO".
+
+            Console.WriteLine("Digite o 1º número:");
+            var firstNumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o 2º número:");
+            var secondNumber = int.Parse(Console.ReadLine());
+
+            if (secondNumber != 0)
+            {
+                var result = firstNumber / secondNumber;
+                Console.WriteLine($"O resultado de {firstNumber} divido por {secondNumber} é {result}");
+            }
+
+            else Console.WriteLine("DIVISÃO POR ZERO");
         }
 
         private void TwelfthExercise()
         {
-            Console.WriteLine("Hello World!");
+            // Ler 4 números inteiros e calcular a soma dos que forem pares.
+
+            var sum = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine("Digite um número");
+                var number = int.Parse(Console.ReadLine());
+
+                if (number % 2 == 0) sum += number;
+            }
+
+            Console.WriteLine($"A soma dos pares é: {sum}");
         }
 
         private void ThirteenthExercise()
         {
-            Console.WriteLine("Hello World!");
+            // Ler 10 valores e determinar o maior dentre eles.
+
+            var highestNumber = 0;
+            
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite um número:");
+                var number = int.Parse(Console.ReadLine());
+                
+                if (number > highestNumber) highestNumber = number;
+            }
+            
+            Console.WriteLine($"O maior número é: {highestNumber}");
         }
 
         private void fourteenthExercise()
         {
-            Console.WriteLine("Hello World!");
+            // Ler três valores e colocar-lós em ordem.
+
+            Console.WriteLine("Digite o 1º número");
+            var firstNumber = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o 2º número");
+            var secondNumber = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o 3º número");
+            var thirdNumber = double.Parse(Console.ReadLine());
+
         }
 
         private void FifteenthExercise()
         {
-            Console.WriteLine("Hello World!");
+            // Ler 10 números e imprimir quantos são múltiplos de 3 e quantos são múltiplos de 5.
+
+            var multipleThree = 0;
+            var multipleFive = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite um número:");
+                var number = double.Parse(Console.ReadLine());
+
+                if (number % 3 == 0) multipleThree++;
+                
+                if (number % 5 == 0) multipleFive++;
+            }
+
+            Console.WriteLine($"Dos números que você digitou apenas {multipleThree} são múltiplos de 3 e apenas {multipleFive} são múltiplos de 5.");
         }
 
         private void SixteenthExercise()
         {
-            Console.WriteLine("Hello World!");
+            // Ler o salário de uma pessoa e imprimir o Salário Líquido de acordo com a redução do imposto descrito ao lado:
+            // Menor ou igual a R$ 600,00 - ISENTO de desconto
+            // Maior que R$ 600 e menor ou igual a 1.200 - 20% desconto
+            // Maior que R$ 1.200 e menor ou igual a R$2.000 - 25% desconto
+            // Maior que R$ 2.000,00 - 30% desconto
+
+            Console.WriteLine("Digite o seu salário");
+            var salary = double.Parse(Console.ReadLine());
+
+            var salaryDiscount = salary switch
+            {
+                <= 600.00 => salary,
+                > 600 and < 1200 => (20 / 100) * salary,
+                > 1200 and <= 2000 => (25 / 100) * salary,
+                _ => (30 / 100) * salary
+            };
+
+            Console.WriteLine($"O salário ficou {salary}");
+
+            // if (salary <= 600.00)
+            // {
+            //     Console.WriteLine($"Seu salário ficou: {salary}");
+            // }
+
+            // if (salary > 600 && salary < 1200)
+            // {
+            //     var salaryDiscount = (20 / 100) * salary; 
+
+            //     Console.WriteLine($"Seu salário ficou: {salaryDiscount}");
+            // }
+
+            // else if (salary > 1.200 && salary <= 2.000)
+            // {
+            //     var salaryDiscount = (25 / 100) * salary; 
+
+            //     Console.WriteLine($"Seu salário ficou: {salaryDiscount}");
+            // }
+
+            // else
+            // {
+            //     var salaryDiscount = (30 / 100) * salary; 
+
+            //     Console.WriteLine($"Seu salário ficou: {salaryDiscount}");
+            // }
         }
 
         private void SeventeenthExercise()
         {
-            Console.WriteLine("Hello World!");
+            // (╯°□°）╯︵ ┻━┻
+            // Imprimir a tabuada de qualquer número fornecido 
+            // pelo usuário até que o usuário forneça o valor –1.
+
+            while (true)
+            {
+                Console.WriteLine("\nDigite a tabuada que você deseja:"); 
+                var timeTable = double.Parse(Console.ReadLine());
+                if (timeTable == -1) break;
+
+                Console.Write("\n");
+
+                for (int i = 1; i <= 10; i++)
+                {
+                    Console.WriteLine(timeTable * i);
+                }
+            }
         }
 
         private void EighteenthExercise()
         {
-            Console.WriteLine("Hello World!");
+            // As maçãs custam R$ 1,30 cada se forem compradas menos de uma dúzia, e R$ 1,00 se forem compradas 
+            // pelo menos 12. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o custo total da compra.
+
+            Console.WriteLine("Quantas maças você quer comprar?");
+            var appleQuanty = int.Parse(Console.ReadLine());
+            
+            if (appleQuanty < 12)
+            {
+                var applePrice = Math.Round(appleQuanty * 1.30, 2);
+
+                Console.WriteLine($"Preço total das maças: {applePrice}");
+            }
+
+            else
+            {
+                var applePrice = Math.Round(appleQuanty * 1.00, 2);
+
+                Console.WriteLine($"Preço total das maças: {applePrice}");
+            }	
         }
 
         private Dictionary<string, Action> GetExercises()
         {
             return new Dictionary<string, Action>
             {
-                { "1", FirstExercise },
+                { "1A", FirstExerciseA },
+                { "1B", FirstExerciseB },
+                { "1C", FirstExerciseC },
                 { "2", SecondExercise },
                 { "3", ThirdExercise },
                 { "4", FourthExercise },

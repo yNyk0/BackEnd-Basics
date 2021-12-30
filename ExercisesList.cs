@@ -36,14 +36,17 @@ namespace ExercisesLists
             try
             {
                 selectedExerciseList[chosenExercise]();
+                
+                Console.WriteLine("\nDeseja executar outro exercício? Tecle (S) para sim, tecle (R) para repetir exercício ou (N) para encerrar");
+                var afterExercise = Console.ReadLine().ToLower();
+                
+                if (afterExercise == "s") goto start;
+                else if (afterExercise == "r") selectedExerciseList[chosenExercise]();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Ocorreu um erro ao executar o exercício. Exception: {ex.Message}");
             }
-            
-            Console.WriteLine("\nDeseja executar outro exercício? Tecle (S) para sim ou (N) para encerrar ");
-            if (Console.ReadLine().ToLower() == "s") goto start;
         }
     }
 }
